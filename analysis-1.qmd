@@ -1,0 +1,25 @@
+---
+title: "Analysis 1"
+author: "Mayah"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+---
+
+# Introduction
+
+This is a new Quarto document.
+
+## Example code
+
+```{r}
+# A simple example in R
+x <- c(1, 2, 3, 4)
+mean(x)
+```
+
+## Summary
+
+Quarto lets you combine narrative text, code, and output in one document.
