@@ -1,11 +1,36 @@
 ---
-title: "Analysis 1"
+title: "A Beautiful Graphic"
 author: "Mayah"
 date: today
+execute:
+  echo: false
 format:
   html:
     theme: cosmo
     toc: true
 ---
 
-Mayah is a data maestro!
+## A quick look at fuel efficiency
+
+```{r}
+#| message: false
+library(tidyverse)
+```
+
+```{r}
+ggplot(mtcars, aes(wt, mpg)) +
+  geom_point(aes(color = factor(cyl)), size = 3, alpha = 0.8) +
+  geom_smooth(method = "lm", se = FALSE, color = "gray40") +
+  labs(
+    title = "Fuel efficiency vs. weight",
+    subtitle = "Cars with more cylinders tend to be heavier and less efficient",
+    x = "Weight (1000 lbs)",
+    y = "Miles per gallon",
+    color = "Cylinders"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
